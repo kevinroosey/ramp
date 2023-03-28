@@ -23,6 +23,7 @@ export function useCustomFetch() {
 
         const result = await fakeFetch<TData>(endpoint, params)
         cache?.current.set(cacheKey, JSON.stringify(result))
+
         return result
       }),
     [cache, wrappedRequest]
